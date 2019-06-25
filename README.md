@@ -7,6 +7,7 @@
 * Video player : ExoPlayer
 * Video format : HLS
 
+
 ## Importing the library
 
 Import the delivery-sdk.aar file into your project
@@ -129,3 +130,9 @@ ThetaDataSourceListener() {
   }
 }
 ```
+
+
+## What's next?
+
+* TFuel payments
+* Performance optimizations
