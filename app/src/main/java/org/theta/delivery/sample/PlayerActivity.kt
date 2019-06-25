@@ -34,7 +34,7 @@ class PlayerActivity : AppCompatActivity() {
     private var trafficFromCDN = 0L
 
     private var playerListener: Player.EventListener? = null
-    private val streamUrl = "https://live3-slivertv.akamaized.net/hls/live/2002890/streamer_us_east_002/playlist.m3u8"
+    private val streamUrl = "[your_m3u8_url]"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,9 +113,7 @@ class PlayerActivity : AppCompatActivity() {
                 BANDWIDTH_METER,
                 ThetaConfig(
                         streamUrl,
-                        Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID),
-                        "",
-                        "vidwmir59zac1566re4"),
+                        "[unique_user_id]"),
                 object : ThetaDataSourceListener {
                     override fun onInfoEvent(thetaInfoEvent: ThetaInfoEvent) {
                         Log.d("PlayerActivity", thetaInfoEvent.message)
