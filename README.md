@@ -1,4 +1,4 @@
-# Theta Protocol Delivery Android SDK SRC 
+# Theta Protocol Delivery Android SDK Library 
 
 
 ## Prerequisites
