@@ -1,0 +1,153 @@
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:id="@+id/linearLayout">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+            android:id="@+id/metricsBg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/trafficPeersLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/trafficFromPeersLabel"/>
+
+    <TextView
+            style="@style/TrafficLabel"
+            android:text="@string/connected"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/trafficPeersLabel"
+            app:layout_constraintStart_toStartOf="@+id/trafficFromCDNLabel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/trafficPeersText"/>
+
+    <TextView
+            android:id="@+id/trafficPeersText"
+            style="@style/TrafficValue"
+            android:text="@string/_0_peers"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/trafficFromCDNText"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            style="@style/TrafficLabel"
+            android:text="@string/to_peers"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/trafficToPeersLabel"
+            app:layout_constraintStart_toStartOf="@+id/trafficFromPeersLabel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/trafficToPeersText"/>
+
+    <TextView
+            android:id="@+id/trafficToPeersText"
+            style="@style/TrafficValue"
+            android:text="@string/_0_0_b"
+            android:textColor="@color/green"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            style="@style/TrafficLabel"
+            android:text="@string/from_cdn"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/trafficFromCDNLabel"
+            app:layout_constraintEnd_toStartOf="@+id/trafficFromCDNText"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="3dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/trafficFromCDNText"/>
+
+    <TextView
+            android:id="@+id/trafficFromCDNText"
+            style="@style/TrafficValue"
+            android:text="@string/_0_0_b"
+            android:textColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/trafficFromCDNLabel"
+            app:layout_constraintEnd_toStartOf="@+id/trafficFromPeersLabel"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/trafficPeersText"/>
+
+    <TextView
+            style="@style/TrafficLabel"
+            android:text="@string/from_peers"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/trafficFromPeersLabel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/trafficFromPeersText"
+            app:layout_constraintStart_toEndOf="@+id/trafficFromCDNText"
+            app:layout_constraintEnd_toStartOf="@+id/trafficFromPeersText"/>
+
+    <TextView
+            android:id="@+id/trafficFromPeersText"
+            style="@style/TrafficValue"
+            android:text="@string/_0_0_b"
+            android:textColor="@color/blue"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/trafficFromPeersLabel"
+            android:layout_marginEnd="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/trafficToPeersText"/>
+
+
+    <!--<TextView-->
+    <!--android:id="@+id/tfuelLabel"-->
+    <!--style="@style/TrafficLabel"-->
+    <!--android:text="@string/tfuel"-->
+    <!--app:layout_constraintStart_toStartOf="@+id/metricsBg"-->
+    <!--app:layout_constraintEnd_toStartOf="@+id/tfuelText"-->
+    <!--app:layout_constraintBaseline_toBaselineOf="@+id/tfuelText"/>-->
+
+    <!--<TextView-->
+    <!--style="@style/TrafficValue"-->
+    <!--android:id="@+id/tfuelText"-->
+    <!--android:text="0"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:paddingBottom="10dp"-->
+    <!--android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/trafficFromCDNText"-->
+    <!--app:layout_constraintStart_toStartOf="@+id/trafficFromCDNText"/>-->
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/logsRecycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="8dp"
+            android:clipToPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/trafficFromPeersText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+</android.support.constraint.ConstraintLayout>

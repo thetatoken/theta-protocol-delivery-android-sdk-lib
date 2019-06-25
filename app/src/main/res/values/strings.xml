@@ -1,0 +1,20 @@
+<resources>
+    <string name="example_name">Delivery SDK Example</string>
+    <string name="connected">Connected</string>
+    <string name="to_peers">To Peers</string>
+    <string name="_0_peers">0 peers</string>
+    <string name="from_peers">From Peers</string>
+    <string name="_0_0_b">0.0 Bytes</string>
+    <string name="from_cdn">From CDN</string>
+    <string name="from_edge_cacher">From EC</string>
+    <string name="fragment_loaded_from_peers">Fragment loaded from Peers</string>
+    <string name="fragment_loaded_from_cdn">Fragment loaded from CDN</string>
+    <string name="fragment_loaded_from_edge_cacher">Fragment loaded from Edge Cacher</string>
+    <string name="fragment_sent_to_peers">Fragment sent to peers</string>
+    <string name="new_peers_number">New peers number: %1$d</string>
+    <string name="wallet_desc">Address: %1$s\nThetawei: %2$d\nTFuelwei: %3$s</string>
+    <plurals name="peers">
+        <item quantity="one">Peer</item>
+        <item quantity="other">Peers</item>
+    </plurals>
+</resources>
