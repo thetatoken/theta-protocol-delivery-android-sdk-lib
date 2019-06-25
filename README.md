@@ -22,7 +22,7 @@ Override the onCreate and onDestroy methods of your video's Activity to respecti
 
 
 ```
-@override fun onCreate(savedInstanceState: Bundle) {
+override fun onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState);
     ...
     ThetaDelivery.init(this);
@@ -30,7 +30,7 @@ Override the onCreate and onDestroy methods of your video's Activity to respecti
 ```
 
 ```
-@override fun onDestroy() {
+override fun onDestroy() {
     ThetaDelivery.destroy(this);
     super.onDestroy();
 }
@@ -72,13 +72,13 @@ The following implementation will bring the player back on track if it falls beh
 
 ```
 player.addListener(new Player.EventListener() {
-       @override fun onTimelineChanged(Timeline timeline, Object manifest, int reason) {
+       override fun onTimelineChanged(Timeline timeline, Object manifest, int reason) {
            if (player != null && player.getBufferedPosition() <= -2000) {
                player.seekToDefaultPosition();
            }
        }
        
-       @Override
+       override
        ....
 })
 ```
@@ -106,26 +106,26 @@ You can subscribe to 4 types of events:
 
 ```
 ThetaDataSourceListener() {
-  @override fun onInfoEvent(ThetaInfoEvent thetaInfoEvent) {
+  override fun onInfoEvent(ThetaInfoEvent thetaInfoEvent) {
     Log.d("ThetaDelivery", "onInfoEvent: " + thetaInfoEvent.message);
     Log.d("ThetaDelivery", "onInfoEvent: " + thetaInfoEvent.code);
   }
 
-  @override fun onTrafficEvent(ThetaTrafficEvent trafficEvent) {
+  override fun onTrafficEvent(ThetaTrafficEvent trafficEvent) {
     Log.d("ThetaDelivery", "onTrafficEvent: " + trafficEvent.name);
   }
   
-  @override fun onPeersChangedEvent(ThetaPeersChangedEvent peersEvent) {
+  override fun onPeersChangedEvent(ThetaPeersChangedEvent peersEvent) {
     Log.d("ThetaDelivery", "onPeersChangedEvent");
   }
 
-  @override fun onAccountUpdatedEvent(ThetaUserWalletEvent userWalletEvent) {
+  override fun onAccountUpdatedEvent(ThetaUserWalletEvent userWalletEvent) {
     Log.d("ThetaDelivery", "onAccountUpdated: " + userWalletEvent.address);
     Log.d("ThetaDelivery", "onAccountUpdated: " + userWalletEvent.thetaWei);
     Log.d("ThetaDelivery", "onAccountUpdated: " + userWalletEvent.tfuelWei);
   }
   
-  @override fun onErrorEvent(ThetaErrorEvent thetaErrorEvent) {
+  override fun onErrorEvent(ThetaErrorEvent thetaErrorEvent) {
       Log.d("ThetaDelivery", "onErrorEvent: " + thetaErrorEvent.name);
   }
 }
